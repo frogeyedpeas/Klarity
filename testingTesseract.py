@@ -13,3 +13,9 @@ def process_image(url):
 
 def _get_image(url):
     return Image.open(StringIO(requests.get(url).content))
+
+i = Image.open('containing_text1.jpg')
+i.load()
+i.show()
+
+print pytesseract.image_to_string(i)
